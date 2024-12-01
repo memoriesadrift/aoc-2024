@@ -19,5 +19,8 @@
     "@types/node": "^22.9.1",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@mobily/ts-belt": "^3.13.1"
   }
 }
