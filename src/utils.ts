@@ -18,3 +18,11 @@ export const getInputAsIntList = async (day: number, test = false) => (await get
 
 export const getInputAsCommaSeparatedIntList = async (day: number, test = false) => (await getInputFromFile(day, test)).split(',').map((e) => Number.parseInt(e))
 
+export const getInputAsListOfCharacters = async (day: number, test = false) => (await getInputAsSingleLine(day, test)).split('')
+
+export const getInputAsListOfDigits = async (day: number, test = false) => (await getInputAsSingleLine(day, test)).split('').map((it) => Number.parseInt(it))
+
+export const getInputAs2dArray = async (day: number, test = false) => (await getInputFromFile(day, test)).split('\n').filter((line) => line.length > 0).map((line) => line.split(''))
+
+export const getInputAs2dIntArray = async (day: number, test = false) => (await getInputFromFile(day, test)).split('\n').filter((line) => line.length > 0).map((line) => line.split('').map((it) => Number.parseInt(it)))
+
