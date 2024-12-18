@@ -180,6 +180,7 @@ const findInitialA = (targetA: number, returnValueIndex: number, program: u3[]):
                 }
                 execute(cpu)
                 if (cpu.outBuf[0] === program[returnValueIndex]) {
+                        console.log(`Found solution for index ${returnValueIndex}. Out: ${program[returnValueIndex]}, initialA: ${initialA}, targetA: ${targetA}`)
                         const finalVal = findInitialA(initialA, returnValueIndex - 1, program)
                         if (finalVal >= 0)
                                 return finalVal
@@ -192,6 +193,7 @@ const part2 = async (test: boolean) => {
         const input = await getInput(17, test)
         const cpu = parseInput(input)
 
+        console.log(`Program: `, cpu.program.join(', '))
         return findInitialA(0, cpu.program.length - 1, cpu.program)
 }
 
