@@ -26,3 +26,8 @@ scaffold:
 .PHONY: crystal
 crystal:
 	crystal run crystal/day$(day).cr
+
+# run with make run day=n
+.PHONY: lua
+lua:
+	lua lua/day$(day).lua
